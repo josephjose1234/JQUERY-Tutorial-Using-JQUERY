@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Document ready function: ensures that the DOM is fully loaded before executing jQuery code
+  $("button").click(function(){
+    // Click event handler for the button element
+
+    // Select the element with ID "p1" and create a jQuery object
+    $("#p1")
+      // Chain the css method to change the text color to red
+      .css("color", "red")
+      // Chain the slideUp method to animate the element's height, making it slide up over 2000 milliseconds (2 seconds)
+      .slideUp(2000)
+      // Chain the slideDown method to animate the element's height, making it slide down over 2000 milliseconds (2 seconds)
+      .slideDown(2000);
+  });
+});
+</script>
+</head>
+<body>
+
+<p id="p1">The key benefit of chaining is that it allows you to perform multiple operations on the same set of elements without repeatedly selecting those elements. It makes the code more compact and often easier to read.</p>
+
+<button>Click me</button>
+
+</body>
+</html>

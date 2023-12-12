@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JQUERY</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        p.bold {
+            font-weight: bold;
+            /* Set the font weight when text is bold */
+        }
+    </style>
+</head>
+
+<body>
+    <section id="1">
+        <h3>JQUERY</h3>
+        <p>jQuery is a JavaScript library designed to simplify the
+            client-side scripting of HTML. It provides a concise and
+            easy-to-use API for interacting with HTML documents, handling
+            events, making AJAX requests, and animating elements. Here
+            are some reasons why developers use jQuery</p>
+    </section>
+    <section id="2">
+        <h3>Usage of Jquery</h3>
+        <ul>
+            <li>DOM Manipulation</li>
+            <li>Event Handling</li>
+            <li>AJAX Requests</li>
+            <li>Animations</li>
+            <li>DOM Traversal</li>
+            <li>Form Handling</li>
+            <li>Effects and Utilities</li>
+            <li>Plugin Integration</li>
+        </ul>
+    </section>
+    <section id="3">
+        <h3>Getting Started</h3>
+        <p>There are several ways to start using jQuery on your web site.
+        </p>
+        <ul>
+            <li> Download the jQuery library from jQuery.com</li>
+            <li> Include jQuery from a CDN, like Google</li>
+        </ul>
+    </section>
+    <section id="4">
+        <h3>Jquery Syntax</h3>
+        <p>With jQuery you select (query) HTML elements and perform "actions" on them.<br>
+            Basic syntax is: $(selector).action()
+
+            <li>A $ sign to define/access jQuery</li>
+            <li> A (selector) to "query (or find)" HTML elements</li>
+            <li>A jQuery action() to be performed on the element(s)</li>
+        </p>
+    </section>
+    <section id="5">
+        <h3>JQUERY EVENTS</h3>
+        <p>All the different visitors' actions that a web page can respond to are called events.
+            An event represents the precise moment when something happens.
+          <!-- Paragraph to be made bold -->
+          <p id="MouseOver">Moving a mouse over an element</p>
+        </p>
+        <!-- jQuery Code -->
+        <script>
+            // jQuery code
+            $(document).ready(function () {
+                // This ensures that the DOM is fully loaded before running the jQuery code
+
+                // Handle mouseover to make text bold
+                $("#MouseOver").mouseover(function () {
+                    $(this).addClass("bold"); // Add the "bold" class on mouseover
+                });
+
+                // Handle mouseout to remove bold style
+                $("#MouseOver").mouseout(function () {
+                    $(this).removeClass("bold"); // Remove the "bold" class on mouseout
+                });
+            });
+        </script>
+    </section>
+    <section id="6">
+        <h3>jQuery toggle</h3>
+        <script>
+            // This ensures that the DOM is fully loaded before running the jQuery code
+            $(document).ready(function(){
+                  // Handle button click to toggle paragraph visibility
+              $("#toggle").click(function(){
+                $("p").toggle();//toggle is a jQuery method that changes the visibility of the <p> element.
+              });
+            });
+            </script>
+            <!-- style="display: none;" means initially the <p> element is hidden -->
+            <p style="display: none;">With jQuery, you can hide and show HTML elements with the toggle() method.</p>
+            <button id="toggle">toggle()</button>
+    </section>
+    <section id="7">
+        <h3>jQuery hide() or show()</h3>
+        <script>
+            $(document).ready(function(){
+              $("#hideMe").click(function(){
+                $("p").hide();//hide <p> element
+              });
+              $("#showMe").click(function(){
+                $("p").show();//show <p> element
+              });
+            });
+            </script>
+            <p>With jQuery, you can hide and show HTML elements with the hide() and show() methods.💻</p>
+        <button id="hideMe">hide</button>
+        <button id="showMe">Show</button>
+    </section>
+    <section id="8">
+        <h3>jQuery Fading</h3>
+        <p>With jQuery you can fade elements in and out of visibility.</p>
+        <div>
+            <button style="padding: 10px 20px;
+font-size: 16px;
+background-color: #3498db;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+">FadeToggle()</button><br><br>
+
+<div id="div1" style="height:80px;background-color:#3498db; color:white"><ul>
+    <li>fadeIn()</li>
+    <li>fadeOut()</li>
+    <li>fadeToggle()</li>
+    <li>fadeTo()</li>
+  </ul></div>
+        </div>
+        <script>
+            $(document).ready(function(){
+              $("button").click(function(){
+                $("#div1").fadeToggle();
+               // $("#div2").fadeToggle("slow"); for a slow fade
+                //$("#div3").fadeToggle(3000); for a timed fade
+              });
+            });
+            </script>
+    </section>
+    <section id="9">
+        <h3>jQuery Sliding</h3>
+        <p>The jQuery slide methods slide elements up and down.</p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Slide Toggle()</div>
+<div id="panel"> <ul>
+    <li>slideDown()</li>
+    <li>slideUp()</li>
+    <li>slideToggle()</li>
+  </ul></div>
+    </section>
+    <section id="10">
+        <h3>jQuery Callback Functions</h3>
+        <p>JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.
+            To prevent this, you can create a callback function.
+            A callback function is executed after the current effect is finished.
+            Typical syntax: $(selector).hide(speed,callback);</p>
+
+    </section>
+    <section id="11">
+        <h3>jQuery Method Chaining</h3>
+        <p>With jQuery, you can chain together actions/methods.
+            Chaining in jQuery refers to the practice of applying multiple methods to a jQuery object in a single statement, where each method is called on the result of the previous one. Chaining can lead to more concise and readable code.
+            Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.Until now we have been writing jQuery statements one at a time (one after the other).
+           </p>
+           <div><script>
+            $(document).ready(function(){
+              // Document ready function: ensures that the DOM is fully loaded before executing jQuery code
+              $("button").click(function(){
+                // Click event handler for the button element
+            
+                // Select the element with ID "p1" and create a jQuery object
+                $("#p1")
+                  // Chain the css method to change the text color to red
+                  .css("color", "red")
+                  // Chain the slideUp method to animate the element's height, making it slide up over 2000 milliseconds (2 seconds)
+                  .slideUp(2000)
+                  // Chain the slideDown method to animate the element's height, making it slide down over 2000 milliseconds (2 seconds)
+                  .slideDown(2000);
+              });
+            });
+            </script>
+            </head>
+            <body>
+            
+            <p id="p1">The key benefit of chaining is that it allows you to perform multiple operations on the same set of elements without repeatedly selecting those elements. It makes the code more compact and often easier to read.</p>
+            
+            <button>Click me</button></div>
+    </section>
+    <section id="">
+        <h3></h3>
+        <p></p>
+    </section>
+    <section id="">
+        <h3></h3>
+        <p></p>
+    </section>
+    <section id="">
+        <h3></h3>
+        <p></p>
+    </section>
+    <!-- <section id="">
+        <h3></h3>
+        <p></p>
+    </section> -->
+</body>
+
+</html>
